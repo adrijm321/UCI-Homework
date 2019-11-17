@@ -1,0 +1,37 @@
+Create Table "Bonds"(
+"DATE" date not Null,
+	"AAA" varchar not Null,
+	"BAA" varchar not Null,
+	constraint "pk_Bonds" Primary Key (
+	"DATE")
+);
+Create Table "CPI"(
+"DATE" date not Null,
+	"CPI" varchar not Null,
+	
+	constraint "pk_CPI" Primary Key (
+	"DATE")
+);
+Create Table "3monthTBill" (
+	"DATE" date NOT NULL,
+	"3monthBill" varchar NOT NULL,
+	CONSTRAINT "pk_3monthTBill" Primary Key (
+	"DATE")
+);
+Create Table "10Minus2" (
+	"DATE" date NOT NULL,
+	"10Minus2" varchar NOT NULL,
+	CONSTRAINT "pk_10Minus2" Primary Key (
+	"DATE")
+);
+Create Table "S&PData" (
+	"DATE" date NOT NULL,
+	"SPYClose" varchar NOT NULL,
+	"SPY12mFR" varchar NOT NULL,
+	CONSTRAINT "pk_S&PData" Primary Key (
+	"DATE")
+);
+select * from "Bonds";
+select * from "3monthTBill";
+select * from "10Minus2";
+select * from "S&PData";
