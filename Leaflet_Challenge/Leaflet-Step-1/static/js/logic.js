@@ -64,7 +64,7 @@ function createFeatures(earthquakeData) {
 
 function createMap(earthquakes) {
 
-  // Define satelitemap and darkmap layers
+  // Define satelitemap and lightmap layers
   var satelitemap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
     maxZoom: 18,
@@ -82,18 +82,18 @@ function createMap(earthquakes) {
 
   
 
-  // Define a baseMaps object to hold our base layers
+  // Define a baseMaps 
   var baseMaps = {
     "Satelite Map": satelitemap,
     "Light Map": lightmap
   };
 
-  // Create overlay object to hold our overlay layer
+  // Create overlay 
   var overlayMaps = {
     Earthquakes: earthquakes
   };
 
-  // Create our map, giving it the satelitemap and earthquakes layers to display on load
+  // Create map for display
   var myMap = L.map("map", {
     center: [37.0902405,-95.7128906],
     zoom: 5,
@@ -102,7 +102,7 @@ function createMap(earthquakes) {
 
   // Create a layer control
   // Pass in our baseMaps and overlayMaps
-  // Add the layer control to the map
+  //Add info to the map
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
